@@ -1,0 +1,39 @@
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  margin-right: 10px; /* Adjust spacing between menu items */
+}
+
+.navbar-nav li:last-child {
+  margin-right: 0; /* Remove margin from the last item */
+}
+
+.navbar-nav li a {
+  display: block;
+  padding: 10px 15px; /* Adjust padding as needed */
+  text-decoration: none;
+  color: #ffffff; /* Optional: Set text color */
+}
+.login {
+  float: right;
+  margin-right: 120px;
+  margin-top: -43px;
+  margin-bottom: 41px;
+  text-decoration: none;
+}
+
+.login a {
+  text-decoration:  none;
+  color: #ffffff;
+  margin-top: -42px;
+
+}
+
+.login li{
+  text-decoration: none;
+}
