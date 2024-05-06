@@ -20,9 +20,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ArticlesModule,
-    StaticpagesModule
+    StaticpagesModule,
+    AppRoutingModule,
+    // ArticlesModule,
+    // StaticpagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

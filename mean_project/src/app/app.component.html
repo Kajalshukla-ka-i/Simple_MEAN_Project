@@ -1,5 +1,9 @@
 <!-- <h1>Mean Project</h1> -->
 <app-header></app-header>
-<app-banner></app-banner>
-<app-latest-article></app-latest-article>
+<app-banner *ngIf="router.url=='/'"></app-banner>
+<app-latest-article *ngIf="router.url=='/'"></app-latest-article>
+<router-outlet></router-outlet>
+
 <app-footer></app-footer>
+
+<!-- <router-outlet></router-outlet> -->

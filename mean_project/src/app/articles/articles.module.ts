@@ -5,7 +5,7 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 import { LatestArticleComponent } from './latest-article/latest-article.component';
 import { FeaturedArticleComponent } from './featured-article/featured-article.component';
 import { CategoriesComponent } from './categories/categories.component';
-
+import { ArticlesRoutingModule } from './articles-routing.modules';
 
 
 @NgModule({
@@ -17,7 +17,8 @@ import { CategoriesComponent } from './categories/categories.component';
     CategoriesComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ArticlesRoutingModule
   ],
   exports:[
   LatestArticleComponent
