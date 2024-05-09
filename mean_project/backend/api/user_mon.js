@@ -23,7 +23,7 @@ app.post('/register', function(req, res, next) {
   userDetails.save()
     .then(() => {
       // If saved successfully, render a success message
-      res.status(200).json( 'User data inserted successfully' );
+      res.status(200).json('User data inserted successfully');
     })
     .catch(err => {
       console.error(err); // Log any errors
