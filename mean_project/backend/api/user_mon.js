@@ -16,14 +16,14 @@ app.post('/register', function(req, res, next) {
   var userDetails = new userModel({
     name: req.body.Name,
     email: req.body.Email,
-    password: req.body.password,
+    password: req.body.Password,
   });
 
   // Save the user object to the database
   userDetails.save()
     .then(() => {
       // If saved successfully, render a success message
-      res.status(200).json({ message: 'User data inserted successfully' });
+      res.status(200).json( 'User data inserted successfully' );
     })
     .catch(err => {
       console.error(err); // Log any errors
