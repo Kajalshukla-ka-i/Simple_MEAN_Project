@@ -9,7 +9,11 @@ import { BannerComponent } from './banner/banner.component';
 import { StaticpagesModule } from './staticpages/staticpages.module';
 import { ArticlesModule } from './articles/articles.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
+import { AccountModule } from './account/account.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AccountserviceService } from './account/accountservice.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,13 +24,17 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    CommonModule,
     ArticlesModule,
     StaticpagesModule,
+    ReactiveFormsModule,
+    AccountModule,
     AppRoutingModule,
     // ArticlesModule,
     // StaticpagesModule
   ],
-  providers: [],
+  providers: [AccountserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
