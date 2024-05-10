@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { AccountserviceService } from '../accountservice.service';
 import { Userloginfo } from '../userloginfo';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +16,11 @@ export class LoginComponent implements OnInit {
   status: string = '';
   // errorStatus: string = '';
 
-  constructor(private formBuilder: FormBuilder, private accountService: AccountserviceService) { }
+  constructor(private formBuilder: FormBuilder, private accountService: AccountserviceService,private router:Router) {
+    if(localStorage.getItem('Loginuser')){
+      router.navigate(['/']);
+    }
+   }
 
   ngOnInit(): void {
     this.setFormState();

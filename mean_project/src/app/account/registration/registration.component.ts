@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import {AccountserviceService} from '../accountservice.service';
 import {Accountinfo} from '../accountinfo';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -11,7 +12,12 @@ export class RegistrationComponent implements OnInit {
   regForm: FormGroup = new FormGroup({});
   datasaved = false;
   message: string = '';
-  constructor(private formbuilder: FormBuilder, private accountservice: AccountserviceService) { }
+  constructor(private formbuilder: FormBuilder, private accountservice: AccountserviceService,private router:Router) {
+
+    if(localStorage.getItem('Loginuser')){
+      router.navigate(['/']);
+    }
+   }
 
   ngOnInit() {
     this.setFormState();

@@ -15,7 +15,7 @@
           <a class="nav-link" routerLink="/about-us" routerLinkActive="active">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/articles" routerLinkActive="active">Articles</a>
+          <a class="nav-link" routerLink="/articles" routerLinkActive="active" *ngIf="isLoggedIn">Articles</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/contact-us" routerLinkActive="active">Contact Us</a>
@@ -23,10 +23,13 @@
       </ul>
       <ul class="nav justify-content-end"> <!-- Change the class here -->
         <li class="nav-item login">
-          <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+          <a class="nav-link" routerLink="/login" routerLinkActive="active" *ngIf="!isLoggedIn">Login</a>
         </li>
         <li class="nav-item login">
-          <a class="nav-link" routerLink="/register" routerLinkActive="active">Sign Up</a>
+          <a class="nav-link" routerLink="/register" routerLinkActive="active" *ngIf="!isLoggedIn">Sign Up</a>
+        </li>
+        <li class="nav-item " *ngIf="isLoggedIn">
+          <button (click)="onLogout()">Logout</button>
         </li>
       </ul>
     </div>
