@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Accountinfo } from './accountinfo';
+import { Userloginfo } from './userloginfo';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,4 +12,9 @@ export class AccountserviceService {
   createaccount(accinfo: Accountinfo): Observable<Accountinfo> {
     return this.http.post<Accountinfo>(this.url + 'register', accinfo)
   }
+  userlogin(logininfo: Userloginfo): Observable<Userloginfo> {
+
+    return this.http.post<Userloginfo>(this.url + 'login', logininfo)
+  }
+
 }

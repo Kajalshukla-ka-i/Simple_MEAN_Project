@@ -13,9 +13,27 @@ mongoose.connect('mongodb+srv://meanstack:meanstack1234@cluster.aaqvhyo.mongodb.
 
 // Define the user schema
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  password: String
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    index: {
+      unique: true,
+    },
+    match: /[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 // Create the User model
