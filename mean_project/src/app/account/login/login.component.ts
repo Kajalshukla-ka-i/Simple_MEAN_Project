@@ -50,7 +50,9 @@ export class LoginComponent implements OnInit {
         this.message = resResult.message;
         this.status = resResult.status;
         if (resResult.status === 'success') {
+          this.router.navigate(['/']);
           localStorage.setItem('Loginuser', JSON.stringify(resResult));
+           // Navigate to home page on successful login
         } else {
           localStorage.removeItem('Loginuser');
         }
