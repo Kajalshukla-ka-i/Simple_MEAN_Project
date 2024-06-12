@@ -45,7 +45,7 @@ app.post('/register', checkEmail, function (req, res, next) {
       userDetails.save()
         .then(() => {
           // If saved successfully, render a success message
-          res.status(200).json('User data created successfully');
+
         })
         .catch(err => {
           console.error(err); // Log any errors
